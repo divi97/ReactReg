@@ -4,7 +4,8 @@ const employeeModel = require('../models/employee');
 const employeeOperations = require('../controllers/employeeOperations');
 
 router.post('/register', (req, res) => {
-    const regEmployee = req.body;
+    const regEmployee = req.body
+    console.log(regEmployee)
     employeeOperations.add(regEmployee, res);
 })
 

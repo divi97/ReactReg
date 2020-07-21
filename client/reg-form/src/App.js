@@ -1,11 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Register from './components/registration/Register'
+import showResults from './showResults'
 
 function App() {
   return (
     <div className="App">
-      
+      <div>
+        <h2>Registration Form</h2>
+          <Register onSubmit = {showResults} />
+      </div>
     </div>
   );
 }

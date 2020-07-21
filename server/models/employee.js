@@ -7,28 +7,28 @@ const employeeSchema = new mongoose.Schema({
     },
     firstname: {
         type: String,
-        required: true
+        default:null
     },
     lastname: {
         type: String,
-        required: true
+        default:null
     },
     email: {
         type: String,
-        required: true,
+        default:null,
         match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     },
     phonenumber: {
         type: Number,
-        required: true
+        default:null
     },
     currentaddress: {
         type: String,
-        required: true
+        default:null
     },
     permanentaddress: {
         type: String,
-        required: true
+        default:null
     },
     photo: {
         type: String
@@ -36,53 +36,53 @@ const employeeSchema = new mongoose.Schema({
     edu_details: [{
         course: {
             type: String,
-            required: true
+            default:null
         }
     }, {
         institution: {
             type: String,
-            required: true
+            default:null
         }
     }, {
         year: {
             type: String,
-            required: true
+            default:null
         }
     }, {
         percentage: {
             type: String,
-            required: true
+            default:null
         }
     }],
     prof_details: [{
         companyname: {
             type: String,
-            required: true
+            default:null
         }
     }, {
         from: {
-            type: Date,
-            required: true,
+            type: String,
+            default:null,
             default: null
         }
     }, {
         to: {
-            type: Date,
-            required: true,
+            type: String,
+            default:null,
             default: null
         }
     }],
     linkedin: {
         type: String,
-        required: true
+        default:null
     },
     github: {
         type: String,
-        required: true
+        default:null
     },
     facebook: {
         type: String,
-        required: true
+        default:null
     },
     hobbies: {
         type: String
