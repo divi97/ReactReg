@@ -1,51 +1,46 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import validate from './validate'
-import renderField from './renderField'
+import validate from '../../utils/validate'
+import { renderField } from '../../utils/renderThings'
+import Button from '@material-ui/core/Button'
+import styles from '../../utils/registerStyles.module.css'
 
 
 const RegisterTwo = props => {
   const { handleSubmit, previousPage } = props
   return (
     <>
-    <div>
-      <h3>Educational Details</h3>
-    </div>
-    <form onSubmit={handleSubmit}>
+      <div>
+        <h2>Educational Details</h2>
+      </div>
+      <form onSubmit={handleSubmit} className={styles.box}>
 
-      <div>
         <Field name="edu_details[0][course]" type="text" component={renderField} label="Course" />
-      </div>
-      <div>
+
         <Field name="edu_details[0][institution]" type="text" component={renderField} label="University/College" />
-      </div>
-      <div>
-        <Field name="edu_details[0][year]" type="text" component={renderField} label="Year" />
-      </div>
-      <div>
-        <Field name="edu_details[0][percentage]" type="text" component={renderField} label="Percentage" />
-      </div>
-      <div>
+
+        <Field name="edu_details[0][year]" type="number" component={renderField} label="Year" />
+
+        <Field name="edu_details[0][percentage]" type="number" component={renderField} label="Percentage" />
+
         <Field name="edu_details[1][course]" type="text" component={renderField} label="Course" />
-      </div>
-      <div>
+
         <Field name="edu_details[1][institution]" type="text" component={renderField} label="University/College" />
-      </div>
-      <div>
-        <Field name="edu_details[1][year]" type="text" component={renderField} label="Year" />
-      </div>
-      <div>
-        <Field name="edu_details[1][percentage]" type="text" component={renderField} label="Percentage" />
-      </div>
-      <div>
-        <button type="button" className="previous" onClick={previousPage}>
+
+        <Field name="edu_details[1][year]" type="number" component={renderField} label="Year" />
+
+        <Field name="edu_details[1][percentage]" type="number" component={renderField} label="Percentage" />
+
+        <br />
+
+        <Button type="button" variant="contained" color="secondary" className={styles.previous} onClick={previousPage}>
           Previous
-        </button>
-        <button type="submit" className="next">
+        </Button>
+        <Button type="submit" variant="contained" color="primary" className={styles.next}>
           Next
-        </button>
-      </div>
-    </form>
+        </Button>
+
+      </form>
     </>
   )
 }

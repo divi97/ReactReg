@@ -1,14 +1,13 @@
 import React from 'react';
 import Register from './components/registration/Register'
-import showResults from './showResults'
+// import List from './components/list/List'
+import showResults from './utils/showResults'
 
 function App() {
   return (
     <div className="App">
-      <div>
-        <h2>Registration Form</h2>
-          <Register onSubmit = {showResults} />
-      </div>
+      {/* <List /> */}
+      <Register onSubmit={showResults} />
     </div>
   );
 }

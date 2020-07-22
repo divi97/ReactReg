@@ -4,6 +4,7 @@ import RegisterOne from './RegisterOne'
 import RegisterTwo from './RegisterTwo'
 import RegisterThree from './RegisterThree'
 import RegisterFour from './RegisterFour'
+import '../../utils/registerStyles.module.css'
 
 class Register extends Component {
   constructor(props) {
@@ -14,6 +15,11 @@ class Register extends Component {
       page: 1
     }
   }
+
+  componentDidMount() {
+    document.title = "Registration Form"
+  }
+
   nextPage() {
     this.setState({ page: this.state.page + 1 })
   }
@@ -26,12 +32,17 @@ class Register extends Component {
     const { onSubmit } = this.props
     const { page } = this.state
     return (
-      <div>
-        {page === 1 && <RegisterOne onSubmit={this.nextPage} />}
-        {page === 2 && (<RegisterTwo previousPage={this.previousPage} onSubmit={this.nextPage} />)}
-        {page === 3 && (<RegisterThree previousPage={this.previousPage} onSubmit={this.nextPage} />)}
-        {page === 4 && (<RegisterFour previousPage={this.previousPage} onSubmit={onSubmit} />)}
-      </div>
+      <>
+        <div><h1>Registration Form</h1>
+          <hr />
+        </div>
+        <div>
+          {page === 1 && <RegisterOne onSubmit={this.nextPage} />}
+          {page === 2 && (<RegisterTwo previousPage={this.previousPage} onSubmit={this.nextPage} />)}
+          {page === 3 && (<RegisterThree previousPage={this.previousPage} onSubmit={this.nextPage} />)}
+          {page === 4 && (<RegisterFour previousPage={this.previousPage} onSubmit={onSubmit} />)}
+        </div>
+      </>
     )
   }
 }

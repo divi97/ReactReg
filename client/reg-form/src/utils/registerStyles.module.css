@@ -1,0 +1,92 @@
+h1, h2 {
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+}
+
+h3, li{
+    color: #fff;
+    font-weight: bold;
+}
+
+hr {
+    width: 50%;
+    border-width: 3px;
+    background-color:#181818;
+}
+
+label{
+    color: #fff;
+    display: block;
+    width: 80%;
+    padding-top: 15px;
+    font-size: 1.2rem;
+    margin: 20px 0 0 0;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+}
+
+small {
+    color: red;
+    display: block;
+    width: 81%;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+}
+
+.infield {
+    display: block;
+    width: 80%;
+    padding-top: 15px;  
+    margin: 20px 0 0 0;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    background-color: #181818;
+    color: #fff !important;
+}
+
+.box {
+    background-color: #181818;
+    width: 50%;
+    padding: 20px;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;   
+    margin-bottom: 5%; 
+}
+
+.next {
+    justify-content: center;
+    align-items: center;
+    left: 45%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.previous {
+    justify-content: center;
+    left: 43%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.txtfield {
+    color: #fff;
+    display: block;
+    width: 80%;
+    padding-top: 15px;  
+    margin: 20px 0 0 0;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    background-color: #181818;
+}

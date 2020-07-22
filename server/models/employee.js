@@ -1,34 +1,39 @@
 const mongoose = require('./connection');
 
 const employeeSchema = new mongoose.Schema({
-    _id: {
-        type: mongoose.Schema.Types.ObjectId,
-        default: null
-    },
+
     firstname: {
         type: String,
-        default:null
+        trim:String,
+        required:true,
+        minlength: [3, 'Must be at least 3 characters.'],
+        maxlength: [10, 'Must be less than 10 characters.']
     },
     lastname: {
         type: String,
-        default:null
+        trim:String,
+        required:true,
+        minlength: [3, 'Must be at least 3 characters.'],
+        maxlength: [10, 'Must be less than 10 characters.']
     },
     email: {
         type: String,
-        default:null,
+        trim:String,
+        required:true,
         match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     },
     phonenumber: {
         type: Number,
-        default:null
+        required:true,
+
     },
     currentaddress: {
         type: String,
-        default:null
+        required:true
     },
     permanentaddress: {
         type: String,
-        default:null
+        required:true
     },
     photo: {
         type: String
@@ -36,53 +41,53 @@ const employeeSchema = new mongoose.Schema({
     edu_details: [{
         course: {
             type: String,
-            default:null
-        }
-    }, {
+            trim:true,
+            required:true
+        },
         institution: {
             type: String,
-            default:null
-        }
-    }, {
+            trim:true,
+            required:true
+        },
         year: {
-            type: String,
-            default:null
-        }
-    }, {
+            type: Number,
+            required:true,
+            maxlength:[4, 'Must be a valid year']
+        },
         percentage: {
             type: String,
-            default:null
+            required:true,
         }
     }],
     prof_details: [{
         companyname: {
             type: String,
-            default:null
-        }
-    }, {
+            trim:true,
+            required:true
+        },
         from: {
-            type: String,
-            default:null,
-            default: null
-        }
-    }, {
+            type: Date,
+            required:true
+        },
         to: {
-            type: String,
-            default:null,
-            default: null
+            type: Date,
+            required:true,
         }
     }],
     linkedin: {
         type: String,
-        default:null
+        trim:String,
+        required:true
     },
     github: {
         type: String,
-        default:null
+        trim:String,
+        required:true
     },
     facebook: {
         type: String,
-        default:null
+        trim:String,
+        required:true
     },
     hobbies: {
         type: String
