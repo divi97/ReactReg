@@ -1,13 +1,21 @@
 import React from 'react';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import Register from './components/registration/Register'
-// import List from './components/list/List'
+import List from './components/list/List'
+import ViewEmployee from './components/view_employee/ViewEmployee'
 import showResults from './utils/showResults'
 
 function App() {
   return (
     <div className="App">
-      {/* <List /> */}
-      <Register onSubmit={showResults} />
+      <Router>
+        <Switch>
+          <Route exact path='/' render={() => <List />} />
+          <Route path='/register' render={() => <Register onSubmit={showResults} />} />
+          <Route path='/view/:id' render={() => <ViewEmployee />} />
+        </Switch>
+      </Router>
+
     </div>
   );
 }

@@ -5,16 +5,25 @@ const employeeOperations = require('../controllers/employeeOperations');
 
 router.post('/register', (req, res) => {
     const regEmployee = req.body
-    console.log(regEmployee)
     employeeOperations.add(regEmployee, res);
 })
 
-router.post('/view', (req, res) => {
-    // For searching and viewing a particular employee (employee id received in req.body)
+router.post('/view/:id', (req, res) => {
+    const id = req.params.id
+    employeeOperations.view(id, res);
+})
+
+router.delete('/delete/:id', (req, res) => {
+    const id = req.params.id
+    employeeOperations.delete(id, res);
 })
 
 router.get('/list', (req, res) => {
-    // For getting list of all registered employees    
+    employeeOperations.get_all(req, res)
+})
+
+router.delete('/clearall', (req, res) => {
+    employeeOperations.clearAll(req, res);
 })
 
 module.exports = router;

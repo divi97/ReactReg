@@ -78,12 +78,30 @@ small {
     transform: translateX(-50%);
 }
 
+.adddetails {
+    justify-content: center;
+    align-items: center;
+    left: 47%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.removedetails {
+    justify-content: center;
+    align-items: center;
+    left: 20%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+
 .txtfield {
-    color: #fff;
+    color: #81D4FA;
     display: block;
     width: 80%;
     padding-top: 15px;  
     margin: 20px 0 0 0;
+    border-color: #81D4FA;
     position: relative;
     left: 50%;
     right: 50%;

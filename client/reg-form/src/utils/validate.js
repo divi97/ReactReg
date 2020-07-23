@@ -27,29 +27,71 @@ const validate = values => {
     errors.permanentaddress = '*Required'
   }
 
-  //  if(!values.course) {
-  //  errors.course = '*Required'
-  //}
-  //  if(!values.institution) {
-  //  errors.institution = '*Required'
-  //}
-  //  if(!values.year) {
-  //  errors.year = '*Required'
-  //} else if (values.year.length < 1950 || values.year.length > 2020) {
-  // errors.year = '*Not a valid year'
-  // }
-  //  if(!values.percentage) {
-  //  errors.percentage = '*Required'
-  //} else if (values.percentage.length > 100)
-  // errors.percentage = 'Not a valid percentage'
-  // }
+  if (!values.edu_details || !values.edu_details.length) {
+    errors.edu_details = { _error: '*At least one detail must be entered' }
+  } else {
+    const membersArrayErrors = []
+    values.edu_details.forEach((member, memberIndex) => {
+      const memberErrors = {}
+      if (!member || !member.course) {
+        memberErrors.course = '*Required'
+        membersArrayErrors[memberIndex] = memberErrors
+      }
+      if (!member || !member.institution) {
+        memberErrors.institution = '*Required'
+        membersArrayErrors[memberIndex] = memberErrors
+      }
+      if (!member || !member.year) {
+        memberErrors.year = '*Required'
+        membersArrayErrors[memberIndex] = memberErrors
+      } else if (member.year < 1950 || member.year > 2020) {
+        memberErrors.year = '*Not a valid year'
+        membersArrayErrors[memberIndex] = memberErrors
+      }
+      if (!member || !member.percentage) {
+        memberErrors.percentage = '*Required'
+        membersArrayErrors[memberIndex] = memberErrors
+      } else if (member.percentage > 100) {
+        memberErrors.percentage = '*Not a valid percentage'
+        membersArrayErrors[memberIndex] = memberErrors
+      }
 
-  //  if(!values.to) {
-  //  errors.to = '*Required'
-  //}
-  //  if(!values.from) {
-  //  errors.from = '*Required'
-  //}
+    });
+    if (membersArrayErrors.length) {
+      errors.edu_details = membersArrayErrors;
+    }
+
+  }
+
+  if (!values.prof_details || !values.prof_details.length) {
+    errors.prof_details = { _error: '*At least one detail must be entered' }
+  } else {
+    const membersArrayErrors = []
+    values.prof_details.forEach((member, memberIndex) => {
+      const memberErrors = {}
+      if (!member || !member.companyname) {
+        memberErrors.companyname = '*Required'
+        membersArrayErrors[memberIndex] = memberErrors
+      }
+      if (!member || !member.from) {
+        memberErrors.from = '*Required'
+        membersArrayErrors[memberIndex] = memberErrors
+      }
+      if (!member || !member.to) {
+        memberErrors.to = '*Required'
+        membersArrayErrors[memberIndex] = memberErrors
+      }
+      if (!member || !member.designation) {
+        memberErrors.designation = '*Required'
+        membersArrayErrors[memberIndex] = memberErrors
+      }
+
+    });
+    if (membersArrayErrors.length) {
+      errors.prof_details = membersArrayErrors;
+    }
+
+  }
 
   if (!values.linkedin) {
     errors.linkedin = '*Required'
@@ -60,8 +102,6 @@ const validate = values => {
   if (!values.facebook) {
     errors.facebook = '*Required'
   }
-
-
 
   return errors
 }

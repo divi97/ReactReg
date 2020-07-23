@@ -13,6 +13,6 @@ export default (async function showResults(values) {
       console.log(error)
     })
 
-
+    window.location = '/';
   //window.alert(`You submitted:\n\n${JSON.stringify(values, null, 2)}`);
 });

@@ -72,6 +72,11 @@ const employeeSchema = new mongoose.Schema({
         to: {
             type: Date,
             required:true,
+        },
+        designation: {
+            type: String,
+            trim: String,
+            required: true
         }
     }],
     linkedin: {
