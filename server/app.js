@@ -11,7 +11,7 @@ const app = express();
 const employee = require('./routes/route');
 
 app.use(cors());
-app.use(bodyparser.urlencoded({ extended: false}));
+app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
 app.use('/emp', employee);

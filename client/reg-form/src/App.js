@@ -12,7 +12,7 @@ function App() {
         <Switch>
           <Route exact path='/' render={() => <List />} />
           <Route path='/register' render={() => <Register onSubmit={showResults} />} />
-          <Route path='/view/:id' render={() => <ViewEmployee />} />
+          <Route path='/view/:id' render={(props) => <ViewEmployee id={props.match.params.id}/>} />
         </Switch>
       </Router>
 

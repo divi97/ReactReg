@@ -12,9 +12,9 @@ const renderEducationalDetails = ({ fields, meta: { touched, error } }) => (
       <li key={index}>
         <h3>Education {index + 1}:</h3>
         <Field name={`${member}.course`} type="text" component={renderField} label="Course" />
-        
+
         <Field name={`${member}.institution`} type="text" component={renderField} label="University/College" />
-        
+
         <Field name={`${member}.year`} type="number" component={renderField} label="Year" />
 
         <Field name={`${member}.percentage`} type="number" component={renderField} label="Percentage" />

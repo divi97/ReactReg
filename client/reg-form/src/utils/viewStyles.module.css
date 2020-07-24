@@ -1,0 +1,16 @@
+.personal {
+    color: #000000;
+    font-weight: bold;
+    text-align: initial;
+}
+
+.phr {
+    width: 100%;
+    border: 1px solid;
+    background-color:#000;
+}
+
+.pdetails {
+    color: #000;
+    margin-left: 4%;
+}

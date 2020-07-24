@@ -10,8 +10,8 @@ h3, li{
 }
 
 hr {
-    width: 50%;
-    border-width: 3px;
+    width: 52%;
+    border: 2px solid;
     background-color:#181818;
 }
 

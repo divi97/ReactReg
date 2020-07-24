@@ -1,7 +1,7 @@
 import React from 'react'
 import { Field, FieldArray, reduxForm } from 'redux-form'
 import validate from '../../utils/validate'
-import {  renderField, renderDatePicker } from '../../utils/renderThings'
+import { renderField, renderDatePicker } from '../../utils/renderThings'
 import Button from '@material-ui/core/Button'
 import styles from '../../utils/registerStyles.module.css'
 
